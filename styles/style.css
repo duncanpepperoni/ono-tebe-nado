@@ -1,1 +1,268 @@
-/* место для вашего кода */
+/*------------------------------------------------*/
+.header {
+    background-color: #fff;
+    height: 293px;
+    display: grid;
+    grid-template-columns: 1fr min-content 1fr;
+    align-items: center;
+    padding: 0 50px;
+    font-size: 18px;
+}
+.header__menu {
+    width: 391px;
+}
+.header__menu-list {
+    display: flex;
+    gap: 0px 26px;
+    list-style-type: circle;
+}
+.header__menu-item {
+    text-underline-offset: 4px;
+}
+.header__menu-item_active .header__menu-link {
+    text-decoration: none;
+}
+.header__menu-item_active {
+    list-style: none;
+}
+.header__logo {
+    width: 148px;
+    height: 105px;
+}
+.header__address {
+    justify-self: end;
+}
+/*------------------------------------------------*/
+.main {
+    height: 2555px;
+}
+/*------------------------------------------------*/
+.cover {
+    height: 757px;
+    background-image: url(/images/cover.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.cover__overlay {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    position: absolute;
+    z-index: 0;
+} /*overlay как отдельно стоящий див, чтобы он корректно работал мы ему задаем position: absolute;,
+а родительсокму блоку position: relative;*/
+.cover__title,
+.cover__description {
+    position: relative;
+    z-index: 1;
+} /*достаем наверх текст (z-index не работает c position: static);*/
+.cover__title {
+    color: #fff;
+    font-size: 66px; /*достаем наверх текст (z-index не работает c position: static);*/
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.cover__title-text-item {
+    display: block;
+}
+.cover__title-text-item__aligned-text {
+    padding: 165px 0px 0px 50px;
+}
+.cover__title-text-item__aligned-text_center {
+    text-align: center;
+    padding: 20px 0px 0px 0px;
+}
+.cover__title-text-item__aligned-text_right {
+    text-align: right;
+    padding: 20px 50px 0px 0px;
+}
+.letter-spacing-extended {
+    letter-spacing: 30px;
+}
+.no-letter-spacing {
+    letter-spacing: 0px;
+}
+.cover__description {
+    display: flex;
+    padding-left: 50px;
+    padding-right: 50px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 106px;
+}
+.cover__description-text {
+    color: #fff;
+    font-size: 22px;
+    text-transform: uppercase;
+    word-spacing: 19px; /*изменяет расстояние между словами*/
+}
+.cover__description-button {
+    color: #fff;
+    font-size: 22px;
+    text-transform: uppercase;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 12px 31px 12px 31px;
+    border: 1px solid #fff;
+}
+/*------------------------------------------------*/
+.lots {
+    min-height: 723px;
+    margin: 180px 24px 0px 24px;
+}
+.lots__title-text {
+    padding-left: 40px;
+}
+.lots__frames {
+    margin-top: 27px;
+}
+.lots__frames-list {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    /*gap и flex-wrap обеспечивают корректную работу при добавлении новых карточек, ну и min-height в .lots*/
+}
+.lots__frames-item {
+    list-style: none;
+    width: 334px;
+    min-height: 596px;
+}
+.lots__frames-link {
+    height: 100%;
+    text-decoration: none;
+}
+.lots__frames-article {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.card_type_film {
+    background-image: url(/images/card-lot-01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card_type_book {
+    background-image: url(/images/card-lot-02.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card_type_picture {
+    background-image: url(/images/card-lot-03.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.lots__frames-article-title {
+    text-transform: uppercase;
+    font-size: 22px;
+    line-height: 120%;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    color: #fff;
+    z-index: 1;
+    padding: 48px 40px 0px 40px;
+}
+.lots__frames-article-text {
+    font-size: 20px;
+    color: #fff;
+    z-index: 1;
+    padding: 0px 40px 48px 40px;
+    line-height: 120%;
+}
+.lots__more {
+    margin-top: 30px;
+    padding-left: 40px;
+}
+.lots__more-link {
+    font-size: 20px;
+}
+/*------------------------------------------------*/
+.about {
+    height: 595px;
+    margin: 120px 24px 0px 24px;
+    display: grid;
+    grid-template-columns: 334px auto;
+    gap: 25px;
+} /*нам говорят повторить размеры колонки сверху, при условии что высота у них отличается на 1px, а это даст искажение при проверке*/
+.about__column-logo {
+    width: 240px;
+    height: 240px;
+    background-color: #000;
+    border: 1x solid #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 35px;
+}
+.about__column-logo-img {
+    width: 148px;
+    height: 114px;
+}
+.about__column-title {
+    margin-top: 35px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+}
+.about__column-paragraphs {
+    margin-top: 8px;
+}
+.about__column-text_margin {
+    margin-bottom: 24px;
+}
+.about__column-text {
+    font-size: 20px;
+    line-height: 120%;
+}
+/*------------------------------------------------*/
+.footer {
+    height: 180px;
+    font-size: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0px 50px;
+}
+.footer__menu {
+    text-align: center;
+}
+.footer__menu-item {
+    list-style: none;
+    text-underline-offset: 4px;
+}
+.footer__menu-item_active .header__menu-link {
+    text-decoration: none;
+}
+.footer__socials {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-self: end;
+    gap: 48px;
+}
+.footer__socials-item {
+    width: 48px;
+    height: 48px;
+}
+/*------------------------------------------------*/
+.common__address {
+    max-width: 240px;
+    height: 98px;
+    line-height: 135%;
+    font-style: normal;
+}
+.common__address-link {
+    text-underline-position: under;
+}
+.common__h2_title {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: bold;
+}
