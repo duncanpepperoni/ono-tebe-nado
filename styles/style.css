@@ -1,12 +1,12 @@
 /*------------------------------------------------*/
 .header {
-    background-color: #fff;
-    height: 293px;
     display: grid;
     grid-template-columns: 1fr min-content 1fr;
     align-items: center;
+    height: 293px;
     padding: 0 50px;
     font-size: 18px;
+    background-color: #fff;
 }
 .header__menu {
     width: 391px;
@@ -38,20 +38,20 @@
 }
 /*------------------------------------------------*/
 .cover {
+    position: relative;
     height: 757px;
     background-image: url(/images/cover.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
-    position: relative;
+    background-size: cover;
 }
 .cover__overlay {
-    background-color: black;
+    position: absolute;
+    z-index: 0;
     width: 100%;
     height: 100%;
     opacity: 0.6;
-    position: absolute;
-    z-index: 0;
+    background-color: black;
 } /*overlay как отдельно стоящий див, чтобы он корректно работал мы ему задаем position: absolute;,
 а родительсокму блоку position: relative;*/
 .cover__title,
@@ -61,9 +61,9 @@
 } /*достаем наверх текст (z-index не работает c position: static);*/
 .cover__title {
     color: #fff;
+    font-weight: bold;
     font-size: 66px; /*достаем наверх текст (z-index не работает c position: static);*/
     text-transform: uppercase;
-    font-weight: bold;
 }
 .cover__title-text-item {
     display: block;
@@ -72,12 +72,12 @@
     padding: 165px 0px 0px 50px;
 }
 .cover__title-text-item__aligned-text_center {
-    text-align: center;
     padding: 20px 0px 0px 0px;
+    text-align: center;
 }
 .cover__title-text-item__aligned-text_right {
-    text-align: right;
     padding: 20px 50px 0px 0px;
+    text-align: right;
 }
 .letter-spacing-extended {
     letter-spacing: 30px;
@@ -87,11 +87,11 @@
 }
 .cover__description {
     display: flex;
-    padding-left: 50px;
-    padding-right: 50px;
     justify-content: space-between;
     align-items: center;
     margin-top: 106px;
+    padding-right: 50px;
+    padding-left: 50px;
 }
 .cover__description-text {
     color: #fff;
@@ -100,13 +100,13 @@
     word-spacing: 19px; /*изменяет расстояние между словами*/
 }
 .cover__description-button {
+    border: 1px solid #fff;
+    padding: 12px 31px 12px 31px;
     color: #fff;
     font-size: 22px;
     text-transform: uppercase;
     background-color: transparent;
     cursor: pointer;
-    padding: 12px 31px 12px 31px;
-    border: 1px solid #fff;
 }
 /*------------------------------------------------*/
 .lots {
@@ -121,59 +121,58 @@
 }
 .lots__frames-list {
     display: flex;
-    gap: 25px;
     flex-wrap: wrap;
-    /*gap и flex-wrap обеспечивают корректную работу при добавлении новых карточек, ну и min-height в .lots*/
-}
+    gap: 25px;
+} /*gap и flex-wrap обеспечивают корректную работу при добавлении новых карточек, ну и min-height в .lots*/
 .lots__frames-item {
-    list-style: none;
     width: 334px;
     min-height: 596px;
+    list-style: none;
 }
 .lots__frames-link {
     height: 100%;
     text-decoration: none;
 }
 .lots__frames-article {
-    height: 100%;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
+    height: 100%;
 }
 .card_type_film {
     background-image: url(/images/card-lot-01.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
+    background-size: cover;
 }
 .card_type_book {
     background-image: url(/images/card-lot-02.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
+    background-size: cover;
 }
 .card_type_picture {
     background-image: url(/images/card-lot-03.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
+    background-size: cover;
 }
 .lots__frames-article-title {
-    text-transform: uppercase;
+    z-index: 1;
+    padding: 48px 40px 0px 40px;
+    color: #fff;
     font-size: 22px;
     line-height: 120%;
     text-decoration: underline;
     text-underline-offset: 4px;
-    color: #fff;
-    z-index: 1;
-    padding: 48px 40px 0px 40px;
+    text-transform: uppercase;
 }
 .lots__frames-article-text {
-    font-size: 20px;
-    color: #fff;
     z-index: 1;
     padding: 0px 40px 48px 40px;
+    color: #fff;
+    font-size: 20px;
     line-height: 120%;
 }
 .lots__more {
@@ -185,33 +184,33 @@
 }
 /*------------------------------------------------*/
 .about {
-    height: 595px;
-    margin: 120px 24px 0px 24px;
     display: grid;
     grid-template-columns: 334px auto;
     gap: 25px;
+    height: 595px;
+    margin: 120px 24px 0px 24px;
 } /*нам говорят повторить размеры колонки сверху, при условии что высота у них отличается на 1px, а это даст искажение при проверке*/
 .about__column-logo {
-    width: 240px;
-    height: 240px;
-    background-color: #000;
-    border: 1x solid #000;
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 240px;
+    height: 240px;
     margin: auto;
     margin-top: 35px;
+    border: 1x solid #000;
+    border-radius: 50%;
+    background-color: #000;
 }
 .about__column-logo-img {
     width: 148px;
     height: 114px;
 }
 .about__column-title {
-    margin-top: 35px;
-    height: 240px;
     display: flex;
     align-items: center;
+    height: 240px;
+    margin-top: 35px;
 }
 .about__column-paragraphs {
     margin-top: 8px;
@@ -225,18 +224,18 @@
 }
 /*------------------------------------------------*/
 .footer {
-    height: 180px;
-    font-size: 18px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    height: 180px;
     padding: 0px 50px;
+    font-size: 18px;
 }
 .footer__menu {
     text-align: center;
 }
 .footer__menu-item {
-    list-style: none;
     text-underline-offset: 4px;
+    list-style: none;
 }
 .footer__menu-item_active .header__menu-link {
     text-decoration: none;
@@ -255,14 +254,14 @@
 .common__address {
     max-width: 240px;
     height: 98px;
-    line-height: 135%;
     font-style: normal;
+    line-height: 135%;
 }
 .common__address-link {
     text-underline-position: under;
 }
 .common__h2_title {
-    text-transform: uppercase;
-    font-size: 40px;
     font-weight: bold;
+    font-size: 40px;
+    text-transform: uppercase;
 }
